@@ -5,14 +5,14 @@ endif
 
 .PHONY: build
 build:
-	cmake -Bbuild
+	cmake -Bbuild -DCMAKE_BUILD_TYPE=Debug
 	cmake --build build
 
 run/core: build
 	$(RETROARCH) -L build/libretro.so
 
 run: build
-	build/sdl2_libretro_test_exe
+	build/sdl3_libretro_test_exe
 
 clean:
 	rm -rf build

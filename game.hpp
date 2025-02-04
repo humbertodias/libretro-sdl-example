@@ -1,8 +1,8 @@
 #ifndef SUPERPONG_GAME_H
 #define SUPERPONG_GAME_H
 
-#include <SDL.h>
-
+#include <SDL3/SDL_render.h>
+#include <SDL3/SDL.h>
 
 class Game {
 public:
