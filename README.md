@@ -2,12 +2,12 @@
 
 ## Build Libretro core
 
-    cmake .
-    make
-    retroarch -L sdl2_libretro_test.so
+    cmake -Bbuild
+    cmake --build build
+    retroarch -L build/sdl2_libretro_test.so
 
 ## Build SDL2 executable
 
-    cmake .
-    make
-    ./sdl2_libretro_test_exe
+    cmake -Bbuild
+    cmake --build build
+    build/sdl2_libretro_test_exe

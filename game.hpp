@@ -1,10 +1,7 @@
 #ifndef SUPERPONG_GAME_H
 #define SUPERPONG_GAME_H
 
-#include <stdint.h>
-#include <vector>
 #include <SDL.h>
-#include <deque>
 
 
 class Game {
