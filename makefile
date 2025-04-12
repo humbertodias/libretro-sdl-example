@@ -1,15 +1,20 @@
-RETROARCH=retroarch
+RETROARCH=$(shell which retroarch)
 ifeq ($(shell uname),Darwin)
     RETROARCH=/Applications/RetroArch.app/Contents/MacOS/RetroArch
 endif
 
 .PHONY: build
+
+CMAKE=$(shell which cmake)
 build:
-	cmake -Bbuild
-	cmake --build build
+	$(CMAKE) -Bbuild
+	$(CMAKE) --build build
+
+videodriver:
+	@echo $(XDG_SESSION_TYPE)
 
 run/core: build
-	$(RETROARCH) -L build/libretro.so
+	SDL_VIDEODRIVER=x11 $(RETROARCH) -L build/sdl2_libretro_test.so
 
 run: build
 	build/sdl2_libretro_test_exe
