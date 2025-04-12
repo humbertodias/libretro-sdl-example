@@ -34,15 +34,6 @@ void Game::GameLoop(double delta_time) {
     // TODO: Implement game loop
 }
 
-SDL_Rect SurfaceToRect(SDL_Surface* surface) {
-    SDL_Rect rect;
-    rect.x = 0;
-    rect.y = 0;
-    rect.w = surface->w;
-    rect.h = surface->h;
-    return rect;
-}
-
 uint32_t* Game::GetFrameBuffer() {
     SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
     SDL_RenderClear(renderer);
@@ -51,10 +42,7 @@ uint32_t* Game::GetFrameBuffer() {
     SDL_RenderPresent(renderer);
 
     if (USE_HARDWARE) {
-        // SDL2
-        // SDL_RenderReadPixels(renderer, nullptr, SDL_PIXELFORMAT_ARGB8888, surface->pixels, surface->pitch);
-        SDL_Rect rect = SurfaceToRect(surface);
-        SDL_RenderReadPixels(renderer, &rect);
+        this->surface = SDL_RenderReadPixels(renderer, nullptr);
     }
 
     SDL_SaveBMP(surface, "screenshot.bmp");  // For demo's sake
