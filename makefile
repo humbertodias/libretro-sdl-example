@@ -10,7 +10,7 @@ CMAKE := $(shell which cmake)
 CC    := $(shell which gcc)
 CXX   := $(shell which g++)
 build:
-	$(CMAKE) -Bbuild -DCMAKE_C_COMPILER=$(CC) -DCMAKE_CXX_COMPILER=$(CXX) -DCMAKE_BUILD_TYPE=Release
+	$(CMAKE) -Bbuild -DCMAKE_C_COMPILER=$(CC) -DCMAKE_CXX_COMPILER=$(CXX) -DCMAKE_BUILD_TYPE=Debug
 	$(CMAKE) --build build
 
 EXT = .dll
@@ -21,10 +21,10 @@ else ifeq ($(OS),Linux)
 endif
 
 run/core: build
-	$(RETROARCH) -L build/libsdl2_example$(EXT)
+	$(RETROARCH) -L build/libsdl3_example$(EXT)
 
 run/exe: build
-	build/sdl2_example_exe
+	build/sdl3_example_exe
 
 clean:
 	rm -rf build
