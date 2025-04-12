@@ -9,7 +9,7 @@ include(FetchContent)
 FetchContent_Declare(
     SDL2
     GIT_REPOSITORY https://github.com/libsdl-org/SDL.git
-    GIT_TAG release-2.30.12
+    GIT_TAG release-2.32.4
     GIT_SHALLOW TRUE
 )
 FetchContent_MakeAvailable(SDL2)
@@ -18,7 +18,7 @@ FetchContent_MakeAvailable(SDL2)
 FetchContent_Declare(
     SDL2_image
     GIT_REPOSITORY https://github.com/libsdl-org/SDL_image.git
-    GIT_TAG release-2.8.4
+    GIT_TAG release-2.8.8
     GIT_SHALLOW TRUE
 )
 FetchContent_MakeAvailable(SDL2_image)
