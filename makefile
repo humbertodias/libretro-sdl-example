@@ -21,7 +21,7 @@ else ifeq ($(OS),Linux)
 endif
 
 run/core: build
-	$(RETROARCH) -L build/libsdl3_example$(EXT)
+	$(RETROARCH) -v -L build/libsdl3_example$(EXT)
 
 run/exe: build
 	build/sdl3_example_exe

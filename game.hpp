@@ -11,7 +11,7 @@ public:
 
 private:
     SDL_Window* window = nullptr;
-    SDL_Renderer* renderer = nullptr;
+    // SDL_Renderer* renderer = nullptr;
     SDL_Surface* surface = nullptr;
     SDL_Texture* pipe = nullptr;
     unsigned int screen_width = 0;
