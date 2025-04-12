@@ -1,8 +1,7 @@
 #ifndef SUPERPONG_GAME_H
 #define SUPERPONG_GAME_H
 
-#include <SDL.h>
-
+#include <SDL3/SDL.h>
 
 class Game {
 public:
@@ -11,12 +10,12 @@ public:
     uint32_t* GetFrameBuffer();
 
 private:
-    SDL_Window *window;
-    SDL_Renderer *renderer;
-    SDL_Surface *surface;
-    unsigned int screen_width;
-    unsigned int screen_height;
-    SDL_Texture* pipe;
+    SDL_Window* window = nullptr;
+    SDL_Renderer* renderer = nullptr;
+    SDL_Surface* surface = nullptr;
+    SDL_Texture* pipe = nullptr;
+    unsigned int screen_width = 0;
+    unsigned int screen_height = 0;
 };
 
-#endif //SUPERPONG_GAME_H
+#endif // SUPERPONG_GAME_H

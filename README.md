@@ -1,11 +1,11 @@
-# libretro_sdl2_example
+# libretro_sdl3_example
 
 ## Build Libretro core
 
 ```shell
 cmake -Bbuild
 cmake --build build
-retroarch -L build/libsdl2_example.so
+retroarch -L build/libsdl3_example.so
 ```
 
 ## Build executable
@@ -13,5 +13,5 @@ retroarch -L build/libsdl2_example.so
 ```shell
 cmake -Bbuild
 cmake --build build
-build/sdl2_example_exe
+build/sdl3_example_exe
 ```
