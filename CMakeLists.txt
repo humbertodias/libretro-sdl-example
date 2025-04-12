@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
-project(sdl2_libretro_test)
+project(sdl2_example)
 
 set(CMAKE_CXX_STANDARD 14)
 

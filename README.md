@@ -5,7 +5,7 @@
 ```shell
 cmake -Bbuild
 cmake --build build
-retroarch -L build/sdl2_libretro_test.so
+retroarch -L build/libsdl2_example.so
 ```
 
 ## Build executable
@@ -13,5 +13,5 @@ retroarch -L build/sdl2_libretro_test.so
 ```shell
 cmake -Bbuild
 cmake --build build
-build/sdl2_libretro_test_exe
+build/sdl2_example_exe
 ```

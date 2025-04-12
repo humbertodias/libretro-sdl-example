@@ -1,23 +1,30 @@
 RETROARCH=$(shell which retroarch)
-ifeq ($(shell uname),Darwin)
+OS := $(shell uname)
+ifeq ($(OS),Darwin)
     RETROARCH=/Applications/RetroArch.app/Contents/MacOS/RetroArch
 endif
 
 .PHONY: build
 
-CMAKE=$(shell which cmake)
+CMAKE := $(shell which cmake)
+CC    := $(shell which gcc)
+CXX   := $(shell which g++)
 build:
-	$(CMAKE) -Bbuild
+	$(CMAKE) -Bbuild -DCMAKE_C_COMPILER=$(CC) -DCMAKE_CXX_COMPILER=$(CXX) -DCMAKE_BUILD_TYPE=Release
 	$(CMAKE) --build build
 
-videodriver:
-	@echo $(XDG_SESSION_TYPE)
+EXT = .dll
+ifeq ($(OS),Darwin)
+	EXT = .dylib
+else ifeq ($(OS),Linux)
+	EXT = .so
+endif
 
 run/core: build
-	SDL_VIDEODRIVER=x11 $(RETROARCH) -L build/sdl2_libretro_test.so
+	$(RETROARCH) -L build/libsdl2_example$(EXT)
 
-run: build
-	build/sdl2_libretro_test_exe
+run/exe: build
+	build/sdl2_example_exe
 
 clean:
 	rm -rf build
